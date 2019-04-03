@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'places#index'
   resources :places do
     resources :comments, only: :create
+    # /places/:place_id/photos
     resources :photos, only: :create
     end
-  end                           
+end
 
 
