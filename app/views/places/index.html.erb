@@ -11,6 +11,10 @@
   <% if place.comments.present? %>
     <div class="col-12">
      <blockquote>
+        <% if place.photos.present? %>
+        <%= place.photos.last %>
+      <% end %>
+      <div class="clear"></div>
         <% if place.comments.last.humanized_rating.present? %>
          <b><%= place.comments.last.humanized_rating %></b> -
         <% end %>
@@ -21,5 +25,4 @@
   <% end %>
  </div>
 <% end %>
-
-
+  
