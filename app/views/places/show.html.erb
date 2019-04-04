@@ -140,8 +140,18 @@
   </div>
 </div>
 
+
+<div class="col-10 offset-1">
+<h1 class="float-left">Photos</h1>
+<div class="clear"></div>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
    Add a photo
 </button>
 </div>
+
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture.url %>
+  <%=photo.caption %>
+<% end %>
