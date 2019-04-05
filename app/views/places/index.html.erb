@@ -5,20 +5,22 @@
     <p><%= place.description %></p><br />
 
     <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+    <div class="clear"></div>
+       <small><%= place.user.email %></small>
     <% end %>
 
   <% if place.comments.present? %>
     <div class="col-12">
      <blockquote>
         <% if place.photos.present? %>
-        <%= place.photos.last %>
+        <%= image_tag place.photos.last.picture.url %>
       <% end %>
       <div class="clear"></div>
         <% if place.comments.last.humanized_rating.present? %>
          <b><%= place.comments.last.humanized_rating %></b> -
         <% end %>
         <%= place.comments.last.message %>
+      <div class="clear"></div>
         <small><%= place.comments.last.user.email %></small>
       </blockquote>
     </div>
