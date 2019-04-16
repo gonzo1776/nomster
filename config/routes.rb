@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     # /places/:place_id/photos
     resources :photos, only: :create
     end
+    resources :users, only: :show
 end
 
 
